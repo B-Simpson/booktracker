@@ -1,0 +1,23 @@
+h1{
+    font-size: 26px;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 18px;
+}
+button{
+    color: white;
+    padding: 10px 20px;
+    background: #2e7c31;
+    text-align: center;
+    cursor: pointer;
+}
+button:hover{
+    background: #4aa04d;
+}

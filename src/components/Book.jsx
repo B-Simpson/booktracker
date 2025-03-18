@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 
 import {  get } from "../BooksAPI"
+import { useNavigate } from "react-router-dom";
 
 const Book = ({ book, handleShelfUpdate, handleDrag }) => {
 
@@ -16,8 +17,14 @@ const Book = ({ book, handleShelfUpdate, handleDrag }) => {
             if(bookOption.current) bookOption.current.value = searchResult.shelf;
         }
         fetchBooks();
+
     },[book.id])
 
+    let navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/book/${book.id}`);
+    }
 
     return (
         <li id={book.id} draggable="true" onDragStart={(e) =>handleDrag(e, book.id)}>
@@ -31,6 +38,7 @@ const Book = ({ book, handleShelfUpdate, handleDrag }) => {
                     backgroundImage:
                         `url(${book.imageLinks.smallThumbnail})`,
                     }}
+                    onClick={handleClick}
                 ></div>
                 <div className="book-shelf-changer">
                     <select ref={bookOption} onChange={handleChange}>

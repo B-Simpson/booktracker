@@ -12,7 +12,9 @@ const headers = {
 export const get = (bookId) =>
   fetch(`${api}/books/${bookId}`, { headers })
     .then((res) => res.json())
-    .then((data) => {return data.book});
+    .then((data) => {
+      return data.book
+    });
 
 export const getAll = () =>
   fetch(`${api}/books`, { headers })

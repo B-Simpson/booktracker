@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 html,
 body,
 .root {
@@ -78,7 +80,7 @@ body,
 }
 .search-books-input-wrapper {
   flex: 1;
-  background: #e9e;
+  /* background: #e9e; */
 }
 .search-books-bar input {
   width: 100%;
